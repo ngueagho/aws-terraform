@@ -32,6 +32,10 @@ module "ec2" {
   
 }
 
+module "route53" {
+  source = "./modules/route53"
+  ec2_ip = module.ec2.ec2_ip
+}
 # variable "zone-id" {
 #   default = "Z101769020724CX5F5KV5"
 # }
